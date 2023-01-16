@@ -1,3 +1,10 @@
+<!--
+ * @Author: peso12345
+ * @LastEditors: peso12345
+ * @Date: 2022-12-20 21:44:06
+ * @Version: 0.0.1
+ * @Description: 描述
+-->
 <script setup lang="ts">
 import routess from '~pages'
 
@@ -5,18 +12,18 @@ const nihao = ref(0)
 
 console.log(routess);
 </script>
-
-<template>
-  <header>
-    <div class="wrapper">
-      <nav class="flex justify-center items-center border-dashed border-cyan-400 border-8">
-        <!-- <RouterLink to="/">/</RouterLink>
+<!-- <RouterLink to="/">/</RouterLink>
         <RouterLink to="/homes">Homes</RouterLink>
         <RouterLink to="/about">About</RouterLink> -->
         <!-- <h1 v-for="item in routess" :key="item.path">{{ item.name }}</h1> -->
+<template>
+  <header>
+    <div class="wrapper">
+      <nav class=" border-solid border-cyan-400 border-8 flex flex-col absolute z-10">
+        <!-- this -->
         <RouterLink class="btn text-4xl hover:underline" :to="item.path" v-for="item in routess" :key="item.path">{{
-            item.name
-        }}</RouterLink>
+          item.name
+        }}|</RouterLink>
       </nav>
     </div>
   </header>
@@ -24,66 +31,18 @@ console.log(routess);
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="scss" scoped>
+nav a:link,a:visited {
+  color: rgb(41, 105, 241);
+}
+nav a:hover {
+  color: rgb(116, 116, 126);
+}
+nav a:focus {
+  color: rgb(235, 95, 30);
+}
+nav a:active {
+  color: rgb(39, 39, 31);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

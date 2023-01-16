@@ -1,11 +1,4 @@
-/*
- * @Author: peso12345
- * @LastEditors: peso12345
- * @Date: 2022-12-20 16:51:20
- * @Version: 0.0.1
- * @Description: 描述
- */
-
+// ./env.d.ts
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pages/client" />
 

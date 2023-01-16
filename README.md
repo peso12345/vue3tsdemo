@@ -77,7 +77,7 @@ npx tailwindcss init -p
 ### 全局css文件引入
 ```
 在你的全局css文件里面写入
-/* ./src/index.css */
+/* ./src/index.css|main.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -150,6 +150,18 @@ export default defineConfig({
   },
 })
 
+```
+### src/env.d.ts
+```
+// ./env.d.ts
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-pages/client" />
+
+declare module '*.vue' { // 声明vue文件
+    import type { DefineComponent } from 'vue'
+    const component: DefineComponent<{}, {}, any>
+    export default component
+ }
 ```
 
 ## Project Setup
